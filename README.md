@@ -218,7 +218,7 @@ const url = "./data/films/" + decade + ".json";
 
 ## Limitations
 This is a very simple example. Here are some ways it could be improved.
-- If the user doesn't have JavaScript enabled in their browser, they won't be able to view films from different decades. We could use the principle of 'progressive enhancement' make the app work without the use of JavaScript. We could then use the JavaScript to provide an enhanced experience for users that do have it enabled. 
+- If the user doesn't have JavaScript enabled in their browser, they won't be able to view films from different decades. We could use the principle of 'progressive enhancement' to make the app work without the use of JavaScript. We then use the JavaScript to provide an enhanced experience for users that do have it enabled. 
   - This isn't as tricky as it sounds. We would have to pass the decade as a route parameter e.g.
   ```php
   Route::get('/films/decade/{decade}', [FilmController::class, 'index']);
@@ -233,6 +233,6 @@ This is a very simple example. Here are some ways it could be improved.
   ```
   - If we change the links in *index.blade.php* to use the new route, the app would work without the use of JavaScript. 
 - The decade links are hard-coded into the HTML. Really these should be dynamically generated e.g. by querying the database to get a list of all possible decades, and then dynamically generating the decade buttons in *index.blade.php*.
-- Add some error checking e.g. if there aren't any films in the database from the selected decade we should display a suitable message to the user. 
+- Add some error checking e.g. if there aren't any films in the database from the selected decade a suitable message should be displayed to the user. 
 - This is a simple example, we haven't really thought about how to name routes for fetch requests, and we just added an extra method in FilmController to respond to the the new route. If we had a lot of fetch requests from JavaScript, our routes file and the FilmController could become bloated. Think about how you could structure and organise the back-end to make this more maintainable.
 

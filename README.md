@@ -21,7 +21,7 @@ function init(){
   // get hold of the HTML elements that have a class of decade-link
   const decadeLinks = document.querySelectorAll(".decade-link");
   // loop over these <a> elements
-  decadeLinks.forEach(function(link){
+  decadeLinks.forEach((link) => {
       //when the user clicks on a link run the function changeDecade()
       link.addEventListener("click",changeDecade,false);
   })

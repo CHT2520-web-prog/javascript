@@ -1,6 +1,6 @@
 # Using Some JavaScript
 ## If you are using Codespaces
-- Open your existing codespace (The one we used in the first four weeks of the module) https://github.com/codespaces.
+- Open your existing codespace (The one we used in the early part of the module) https://github.com/codespaces.
 - In the terminal enter
 ```
 git clone https://github.com/CHT2520-web-prog/javascript
@@ -15,7 +15,7 @@ If you view the app on a web server you should find it is a simple app where Jav
 - At the moment the data for the app is stored in two arrays `filmsFrom2000s` and `filmsFrom2010s` .
   - Inside _app.js_, have a good look at the structure of these arrays, note that each film is stored as a JavaScript object.
 - Look at the bottom of *app.js*. The final line of code will call the function `init()`.
-- 
+
 ```javascript
 function init(){
   // get hold of the HTML elements that have a class of decade-link
@@ -143,9 +143,9 @@ First we'll make some changes to the Laravel app, and then we'll integrate the J
 
 ### Using a Query Scope
 - Open the Film model and add a `scopeByDecade()` method.
-  - This uses a 'query scope' that allows us to customise queries on a model
+  - This uses a 'query scope' that allows us to customise queries on a model.
     - In this case it will run an SQL query that retrieves all the films that have a year value within the specified range.
-    - You can read more about query scopes here: https://laravel.com/docs/12.x/eloquent#query-scopes
+    - You can read more about query scopes here: https://laravel.com/docs/12.x/eloquent#query-scopes.
 
 ```php
 namespace App\Models;
@@ -180,10 +180,9 @@ Route::get('/json/films/{decade}', [FilmController::class, 'listByDecade']);
         return response()->json($films);
     }
 ```
-- Test this in a browser i.e. enter the URL http://localhost/json/films/2010
-  - You should see the returned JSON data
+- Test this in a browser and you should see the returned JSON data.
 
-### Modify the view
+### Modifying the view
 - Open the _index.blade.php_ view and change it to the following:
 
 ```html
@@ -213,8 +212,13 @@ Route::get('/json/films/{decade}', [FilmController::class, 'listByDecade']);
 ```javascript
 const url = "./data/films/" + decade + ".json";
 ```
+to:
 
-- Test this works. From the homepage the user should be able to select different decades and the list of films should update. 
+```javascript
+const url = "/json/films/" + decade;
+```
+
+- Test this works. From the homepage the user should be able to select different decades and the list of films should update using data from the Laravel back-end. 
 
 ## Limitations
 This is a very simple example. Here are some ways it could be improved.

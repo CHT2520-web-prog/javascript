@@ -23,11 +23,11 @@ function init(){
   // loop over these <a> elements
   decadeLinks.forEach((link) => {
       //when the user clicks on a link run the function changeDecade()
-      link.addEventListener("click",changeDecade,false);
+      link.addEventListener("click", changeDecade, false);
   })
 }
 ```
-- The function `init()` gets hold of the decade links and adds an event listener.
+- The function `init()` gets hold of the decade links and adds an event listener for each hyperlink.
   - When the user clicks on one of these links the function `changeDecade()` will be executed. 
   - Look in the HTML, make sure you can see how these links have been selected. 
 
@@ -49,7 +49,7 @@ function changeDecade(event){
 ```
 Every time an event happens e.g. the user clicks on an element. An `event` object is generated that can tell us information about the event e.g. the type of event and the element that was clicked (the `target` property). 
 - This example uses the `target` property to get hold of the hyperlink that generated the event.
-- `innerHTML` is used to look inside this element for the content of the element. This gives us the name of the decade that was selected. 
+- `innerHTML` is used to look inside this element for the content of the element. This gives us the name of the decade that was selected e.g. 2000. 
 - An `if` statement uses this value to call further functions `updateFilmsHeading()` and `updateFilmList()`.
 
 `updateFilmsHeading()` simply gets hold of the _H1_ element from the page and changes its content to show which decade has been selected.
